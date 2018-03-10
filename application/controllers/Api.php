@@ -23,14 +23,14 @@ class Api extends CI_Controller {
 					"code" => "",
 					"message" => "Simpan data berhasil",
 					"severity" => "success",
-					"data" => ""
+					"data" => "#OK^"
 				);
 			}else{
 				$response = array(
 					"code" => "",
 					"message" => "Simpan data gagal",
 					"severity" => "danger",
-					"data" => ""
+					"data" => "#NOT OK^"
 				);
 			}
 		}else{
@@ -38,10 +38,16 @@ class Api extends CI_Controller {
 				"code" => "",
 				"message" => "Tidak ada data dikirim ke server",
 				"severity" => "warning",
-				"data" => ""
+				"data" => "#NOT OK^"
 			);
 		}
 		echo json_encode($response,JSON_PRETTY_PRINT);
+	}
+
+	public function get_instruksi(){
+		echo "instruksi 1";
+		echo "-";
+		echo "instruksi 2";
 	}
 
 }
