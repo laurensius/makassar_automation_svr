@@ -50,4 +50,7 @@ class Api extends CI_Controller {
 		echo "instruksi 2";
 	}
 
+	public function get_recent(){
+	    json_encode($this->mod_sensor->get_recent(),JSON_PRETTY_PRINT) ;
+	}
 }
