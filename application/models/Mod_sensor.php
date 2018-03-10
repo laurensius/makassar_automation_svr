@@ -8,5 +8,12 @@ class Mod_sensor extends CI_Model {
         return $this->db->affected_rows();
     }
     
-    
+    function get_recent(){
+        $this->db->select('*');
+        $this->db->from('t_sensor');
+        $this->db->order_by('id','desc');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
