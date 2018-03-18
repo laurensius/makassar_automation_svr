@@ -45,12 +45,15 @@ class Api extends CI_Controller {
 	}
 
 	public function get_instruksi(){
-		echo "instruksi 1";
-		echo "-";
-		echo "instruksi 2";
+		$recent = $this->mod_sensor->get_recent();
+		if($recent[0]->conductivity > 600){
+			echo "RELAY ON";
+		}else{
+			echo "RELAY OFF";
+		}
+
 	}
 
 	public function get_recent(){
-	    echo json_encode($this->mod_sensor->get_recent(),JSON_PRETTY_PRINT) ;
 	}
 }
