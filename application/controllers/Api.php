@@ -58,4 +58,34 @@ class Api extends CI_Controller {
 		$response = $this->mod_sensor->get_recent();
 		echo json_encode($response,JSON_PRETTY_PRINT);
 	}
+	
+	public function get_data(){
+	    // Datatables Variables
+	    $draw = intval($this->input->get("draw"));
+	    $start = intval($this->input->get("start"));
+	    $length = intval($this->input->get("length"));
+	    
+	    
+	    $datas = $this->mod_sensor->get_all();
+	    
+	    $data = array();
+	    
+	    foreach($datas->result() as $r) {
+	        
+	        $data[] = array(
+	            $r->conductivity,
+	            $r->tds,
+	            $r->datetime
+	        );
+	    }
+	    
+	    $output = array(
+	        "draw" => $draw,
+	        "recordsTotal" => $datas->num_rows(),
+	        "recordsFiltered" => $datas->num_rows(),
+	        "data" => $data
+	    );
+	    echo json_encode($output);
+	    exit();
+	}
 }

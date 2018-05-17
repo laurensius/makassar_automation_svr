@@ -16,4 +16,8 @@ class Mod_sensor extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    
+    function get_all(){
+        return $this->db->get('t_sensor');
+    }
 }

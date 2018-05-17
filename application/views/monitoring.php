@@ -24,6 +24,9 @@
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo site_url('apps/grafik/'); ?>">Grafik</a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo site_url('apps/data_history/'); ?>">Data History</a>
+          </li>
           <!-- <li class="nav-item ">
             <a class="nav-link" href="<?php echo site_url('apps/logout/'); ?>">Logout</a>
           </li> -->
@@ -45,7 +48,7 @@
                 <h5>SALINITY</h5> -->
                 <div id="gg_tds"></div>
             </center>
-        </div>  
+        </div>
       </div>
     </div>
     <script src="<?php echo base_url("assets/js/jquery-3.2.1.slim.min.js"); ?>"></script>
